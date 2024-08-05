@@ -1,0 +1,21 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: notificationms
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: notification-group
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["prometheus","health","refresh"]
+
+system:
+  notificationTopic: notification_topic
